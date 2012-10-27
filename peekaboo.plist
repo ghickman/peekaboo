@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>george.awesome</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/george/.venvs/notifier/bin/python</string>
+    <string>/Users/george/Projects/peekaboo/main.py</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <false/>
+  <key>UserName</key>
+  <string>george</string>
+  <key>WorkingDirectory</key>
+  <string>/Users/george/Projects/peekaboo</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/george/Projects/peekaboo/stderr.log</string>
+  <key>StandardOutPath</key>
+  <string>/Users/george/Projects/peekaboo/stdout.log</string>
+</dict>
+</plist>
