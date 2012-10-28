@@ -7,9 +7,6 @@ import requests
 import pync
 
 
-SLEEP_TIME = 5
-
-
 try:
     headers = {'Authorization': 'bearer {0}'.format(os.environ['GITHUB_TOKEN'])}
     cache = []
@@ -43,7 +40,7 @@ try:
 
                 cache.append(notification['id'])
 
-        time.sleep(SLEEP_TIME)
+        time.sleep(5)
 except KeyboardInterrupt:
     sys.exit(0)
 
