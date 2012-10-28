@@ -25,7 +25,6 @@ try:
             cache = []
 
         for notification in notifications:
-            sys.stdout.write(notification['id'] + '\n')
             if not notification['id'] in cache:
                 latest_comment_id = notification['subject']['latest_comment_url'].split('/')[-1:]
                 issue_url = notification['subject']['url'].replace('api.', '').replace('repos/', '')
