@@ -2,24 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Label</key>
-  <string>george.awesome</string>
-  <key>ProgramArguments</key>
-  <array>
-    <string>/Users/george/.venvs/notifier/bin/python</string>
-    <string>/Users/george/Projects/peekaboo/main.py</string>
-  </array>
-  <key>RunAtLoad</key>
-  <true/>
-  <key>KeepAlive</key>
-  <false/>
-  <key>UserName</key>
-  <string>george</string>
-  <key>WorkingDirectory</key>
-  <string>/Users/george/Projects/peekaboo</string>
-  <key>StandardErrorPath</key>
-  <string>/Users/george/Projects/peekaboo/stderr.log</string>
-  <key>StandardOutPath</key>
-  <string>/Users/george/Projects/peekaboo/stdout.log</string>
+    <key>Label</key>
+    <string>com.ghickman.peekaboo</string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/george/.venvs/peekaboo/bin/python</string>
+        <string>/Users/george/Projects/peekaboo/peekaboo.py</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>GITHUB_TOKEN</key>
+        <string>MY_TOKEN</string>
+    </dict>
+    <key>StandardErrorPath</key>
+    <string>/Users/george/Projects/peekaboo/stderr.log</string>
+    <key>StandardOutPath</key>
+    <string>/Users/george/Projects/peekaboo/stdout.log</string>
 </dict>
 </plist>
+
