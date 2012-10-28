@@ -14,11 +14,11 @@ SLEEP_TIME = 5
 def run():
     headers = {'Authorization': 'bearer {0}'.format(os.environ['GITHUB_TOKEN'])}
     cache = {}
-    since = datetime.datetime.now().isoformat()
+    since = None
     url = 'https://api.github.com/notifications'
 
     while True:
-        params = {'since': since}
+        params = {'since': since} if since else {}
         r = requests.get(url, headers=headers, params=params)
         if not r.ok:
             raise Exception('GitHub returned {0}'.format(r.status_code))
