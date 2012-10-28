@@ -30,7 +30,7 @@ def run():
 
         for notification in notifications:
             if not notification['id'] in cache:
-                latest_comment_id = notification['subject']['latest_comment_id'].split('/')[-1:]
+                latest_comment_id = notification['subject']['latest_comment_url'].split('/')[-1:]
                 issue_url = notification['subject']['url'].replace('api.', '').replace('repos/', '')
                 open_url = '{0}#{1}'.format(issue_url, latest_comment_id)
                 kwargs = {
