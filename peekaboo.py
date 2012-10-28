@@ -10,7 +10,7 @@ import pync
 SLEEP_TIME = 5
 
 
-def run():
+try:
     headers = {'Authorization': 'bearer {0}'.format(os.environ['GITHUB_TOKEN'])}
     cache = []
     since = None
@@ -44,11 +44,6 @@ def run():
                 cache.append(notification['id'])
 
         time.sleep(SLEEP_TIME)
-
-
-if __name__ == '__main__':
-    try:
-        run()
-    except KeyboardInterrupt:
-        sys.exit(0)
+except KeyboardInterrupt:
+    sys.exit(0)
 
