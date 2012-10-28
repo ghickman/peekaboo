@@ -12,7 +12,7 @@ SLEEP_TIME = 5
 
 def run():
     headers = {'Authorization': 'bearer {0}'.format(os.environ['GITHUB_TOKEN'])}
-    cache = {}
+    cache = []
     since = None
     url = 'https://api.github.com/notifications'
 
@@ -41,7 +41,7 @@ def run():
                 s = notification['subject']['url'].split('/')[-2:]
                 pync.Notifier.notify('{0} #{1}'.format(s[0].title(), s[1]), **kwargs)
 
-                cache[notification['id']] = notification
+                cache.append(notification['id'])
 
         time.sleep(SLEEP_TIME)
 
