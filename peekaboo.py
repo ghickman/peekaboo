@@ -25,7 +25,7 @@ def run():
         since = time.strptime(r.headers['date'], '%a, %d %b %Y %H:%M:%S %Z')
         notifications = json.loads(r.content)
         if not notifications:
-            cache = {}
+            cache = []
 
         for notification in notifications:
             sys.stdout.write(notification['id'] + '\n')
