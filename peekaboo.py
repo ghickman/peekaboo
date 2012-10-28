@@ -8,8 +8,8 @@ import pync
 
 
 try:
-    headers = {'Authorization': 'bearer {0}'.format(os.environ['GITHUB_TOKEN'])}
     cache = []
+    headers = {'Authorization': 'bearer {0}'.format(os.environ['GITHUB_TOKEN'])}
     since = None
     url = 'https://api.github.com/notifications'
 
