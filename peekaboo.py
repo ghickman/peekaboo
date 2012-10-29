@@ -7,9 +7,6 @@ import requests
 import pync
 
 
-__version__ = '0.1'
-
-
 try:
     cache = []
     headers = {'Authorization': 'bearer {0}'.format(os.environ['GITHUB_TOKEN'])}

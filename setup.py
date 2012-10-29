@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
 
-import peekaboo
-
 
 requires = ('pync==1.1', 'requests==0.14.1')
 packages = ('peekaboo',)
 
 setup(
     name='Peekaboo',
-    version=peekaboo.__version__,
+    version='0.1',
     description='Rename tv show files using online databases',
     long_description=open('README.rst').read(),
     author='George Hickman',
