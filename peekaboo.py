@@ -7,6 +7,12 @@ import requests
 import pync
 
 
+types = {
+    'comments': 'issuecomment',
+    'commits': 'commitcomment',
+    'pulls': 'issuecomment',
+}
+
 try:
     cache = []
     headers = {'Authorization': 'bearer {0}'.format(os.environ['GITHUB_TOKEN'])}
@@ -27,8 +33,10 @@ try:
         for notification in notifications:
             if not notification['id'] in cache:
                 latest_comment_id = notification['subject']['latest_comment_url'].split('/')[-1:][0]
-                issue_url = notification['subject']['url'].replace('api.', '').replace('repos/', '').replace('pulls', 'pull')
-                open_url = '{0}#issuecomment-{1}'.format(issue_url, latest_comment_id)
+                issue_url = notification['subject']['url'].replace('api.', '').replace('repos/', '')
+                tipe = issue_url.split('/')[-2]
+                issue_url = issue_url.replace(tipe, tipe[:-1])
+                open_url = '{0}#{1}-{2}'.format(issue_url, types[tipe[:-1]], latest_comment_id)
                 kwargs = {
                     'title': notification['repository']['full_name'],
                     'open': open_url,
